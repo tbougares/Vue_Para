@@ -34,5 +34,9 @@ export class HomeComponent implements OnInit {
     this.router.navigate(["/product-single",id])
 
   }
+  Shop(i:any){
+    console.log(i)
+    
+  }
     
 }

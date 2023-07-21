@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategorieService } from '../categorie.service';
+import { ShopService } from '../service/shop.service';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,8 @@ import { CategorieService } from '../categorie.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor( public serviceCategorie:CategorieService,public router:Router) { }
-
+  constructor( public serviceCategorie:CategorieService,public router:Router ,private shoping:ShopService) { }
+  shop=this.shoping.panniers
   ngOnInit(): void {
     this.serviceCategorie.getAllcategorie().subscribe(res=>{
       if(res.valueOf())

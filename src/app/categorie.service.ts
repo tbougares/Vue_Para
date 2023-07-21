@@ -24,6 +24,9 @@ export class CategorieService {
     return this.http.put('http://localhost:1000/categorie/Updatecategorie/'+id,newcategorie)
 
   }
+  getbyIdCategorie(id:any){
+    return this.http.get('http://localhost:1000/categorie/'+ id +'/')
+  }
   getbyIdProduit(id:any){
     return this.http.get('http://localhost:1000/produit/'+ id +'/')
   }

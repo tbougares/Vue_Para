@@ -52,7 +52,7 @@
               Catégorie
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
-              <li *ngFor="let Cat  of serviceCategorie.categorie , index as i" ><a (click)="Catego(Cat._id)">{{Cat.nameCateg}}</a></li>
+              <li *ngFor="let Cat  of serviceCategorie.categorie , index as i" ><a routerLink="/shop/{{Cat._id}}">{{Cat.nameCateg}}</a></li>
               
             </ul>
           </li>
@@ -89,12 +89,12 @@
           </a>
           <div class="dropdown-menu cart-dropdown">
             <!-- Cart Item -->
-            <div class="media">
+            <div class="media" *ngFor="let shopp of shop ,index as i ">
               <a routerLink="/product-single">
-                <img class="media-object img- mr-3" src="assets/images/cart-1.jpg" alt="image" />
+                <img class="media-object img- mr-3" [src]="shopp.photoProd" alt="image" />
               </a>
               <div class="media-body">
-                <h6>Ladies Bag</h6>
+                <h6>{{shopp.nameProd}}</h6>
                 <div class="cart-price">
                   <span>1 x</span>
                   <span>1250.00</span>
@@ -104,19 +104,7 @@
             </div><!-- / Cart Item -->
   
             <!-- Cart Item -->
-            <div class="media">
-              <a routerLink="/product-single">
-                <img class="media-object img-fluid mr-3" src="assets/images/cart-2.jpg" alt="image" />
-              </a>
-              <div class="media-body">
-                <h6>Skinny Jeans</h6>
-                <div class="cart-price">
-                  <span>1 x</span>
-                  <span>1250.00</span>
-                </div>
-              </div>
-              <a href="#" class="remove"><i class="tf-ion-close"></i></a>
-            </div><!-- / Cart Item -->
+          <!-- / Cart Item -->
   
             <div class="cart-summary">
               <span class="h6">Total</span>

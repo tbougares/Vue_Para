@@ -26,7 +26,7 @@
           <div class="row align-items-center">
             <div class="col-lg-12 mb-4 mb-lg-0">
               <div class="section-title">
-                  <h2 class="d-block text-left-sm">Shop</h2>
+                  <h2 class="d-block text-left-sm">{{Cat.nameCateg}}</h2>
   
                   <div class="heading d-flex justify-content-between mb-5">
                     <p class="result-count mb-0"> Showing 1–6 of 17 results</p>
@@ -45,18 +45,21 @@
               </div>
             </div>
           </div>
+          <div class="row">
+            
+          </div>
   
           <div class="row">
-              <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5" >
+              <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5" *ngFor="let Prod of Produits, index as i">
             <div class="product">
-        <div class="product-wrap">
-          <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/322.jpg" alt="product-img" /></a>
-          <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/444.jpg" alt="product-img" /></a>
+        <div class="product-wrap" >
+          <a routerLink="/product-single/{{Prod._id}}" ><img class="img-fluid w-100 mb-3 img-first" [src]="Prod.photoProd" alt="product-img" /></a>
+          <!-- <a routerLink="/product-single/{{Prod._id}}"><img class="img-fluid w-100 mb-3 img-second" [src]="Prod.photosProd[1]" alt="product-img" /></a>  -->
         </div>
   
         <span class="onsale">Sale</span>
         <div class="product-hover-overlay">
-          <a href="#"><i class="tf-ion-android-cart"></i></a>
+          <a (click)="shop(i)"><i class="tf-ion-android-cart"></i></a>
           <a href="#"><i class="tf-ion-ios-heart"></i></a>
               </div>
   
@@ -69,114 +72,7 @@
       </div>
         </div>
   
-        <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5">
-          <div class="product">
-        <div class="product-wrap">
-          <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/111.jpg" alt="product-img" /></a>
-          <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/444.jpg" alt="product-img" /></a>
-        </div>
-  
-        <div class="product-hover-overlay">
-          <a href="#"><i class="tf-ion-android-cart"></i></a>
-          <a href="#"><i class="tf-ion-ios-heart"></i></a>
-              </div>
-              
-        <div class="product-info">
-          <h2 class="product-title h5 mb-0"><a routerLink="/product-single">Open knit switer</a></h2>
-          <span class="price">
-            $29.10
-          </span>
-        </div>
-      </div>
-        </div>
-  
-        <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5" >
-          <div class="product">
-        <div class="product-wrap">
-          <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/222.jpg" alt="product-img" /></a>
-          <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/322.jpg" alt="product-img" /></a>
-        </div>
-  
-        <span class="onsale">Sale</span>
-        <div class="product-hover-overlay">
-          <a href="#"><i class="tf-ion-android-cart"></i></a>
-          <a href="#"><i class="tf-ion-ios-heart"></i></a>
-              </div>
-  
-        <div class="product-info">
-          <h2 class="product-title h5 mb-0"><a routerLink="/product-single">Official trendy</a></h2>
-          <span class="price">
-            $350.00 – $355.00
-          </span>
-        </div>
-      </div>
-        </div>
-  
-        <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5">
-      <div class="product">
-        <div class="product-wrap">
-          <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/322.jpg" alt="product-img" /></a>
-          <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/111.jpg" alt="product-img" /></a>
-        </div>
-  
-        <div class="product-hover-overlay">
-          <a href="#"><i class="tf-ion-android-cart"></i></a>
-          <a href="#"><i class="tf-ion-ios-heart"></i></a>
-              </div>
-  
-        <div class="product-info">
-          <h2 class="product-title h5 mb-0"><a routerLink="/product-single">Frock short</a></h2>
-          <span class="price">
-            $249
-          </span>
-        </div>
-      </div>
-        </div>
-  
-        <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5">
-          <div class="product">
-        <div class="product-wrap">
-          <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/444.jpg" alt="product-img" /></a>
-          <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/222.jpg" alt="product-img" /></a>
-        </div>
-  
-        <div class="product-hover-overlay">
-          <a href="#"><i class="tf-ion-android-cart"></i></a>
-          <a href="#"><i class="tf-ion-ios-heart"></i></a>
-              </div>
-  
-        <div class="product-info">
-          <h2 class="product-title h5 mb-0"><a routerLink="/product-single">Sleeve dress</a></h2>
-          <span class="price">
-            $59.10
-          </span>
-        </div>
-      </div>
-        </div>
-  
-        <div class="col-lg-4 col-12 col-md-6 col-sm-6 mb-5" >
-          <div class="product">
-        <div class="product-wrap">
-          <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/322.jpg" alt="product-img" /></a>
-          <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/222.jpg" alt="product-img" /></a>
-        </div>
-  
-        <div class="product-hover-overlay">
-          <a href="#"><i class="tf-ion-android-cart"></i></a>
-          <a href="#"><i class="tf-ion-ios-heart"></i></a>
-              </div>
-  
-        <div class="product-info">
-          <h2 class="product-title h5 mb-0"><a routerLink="/product-single">Stylish dress</a></h2>
-          <span class="price">
-            $99.00
-          </span>
-        </div>
-      </div>
-        </div>
-  
-      
-     
+        
   
             <div class="col-12">
               <nav aria-label="Page navigation">
